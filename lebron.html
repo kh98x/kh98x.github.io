@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lebron</title>
+    <script type="text/javascript" src="paper.js"></script>
+    <script type="text/paperscript" canvas="myCanvas">
+       
+        // floor position
+        var leftSideDribble = new Point(450, 540);
+        var middleDribble = new Point(550, 540);
+        var rightSideDribble = new Point(650, 540);
+
+        tool.onKeyUp = function(event){
+           // if(event.key === 'left') {
+             //   for(var i = 0; i < leftUpperSide.length; i++){
+               //   leftUpperSide[i].position = leftUpperSide[i].position;
+              //  }
+           // }
+        }
+
+        function onFrame(event) {
+            if(event.time.toFixed(0) % 2 === 1) {
+                basketball.position = leftPinky.position
+            } else {
+                basketball.position = leftSideDribble
+            }
+
+         //   var vector = destinaton - basketball.position;
+            if(Key.isDown('down')){
+
+            } 
+            if(Key.isDown('up')){
+            }
+            if(Key.isDown('right')){
+                if(event.time.toFixed(0) % 2 === 1) {
+                    basketball.position = rightPinky.position
+                    for(var i = 0; i < rightUpperSide.length; i++){
+                        rightUpperSide[i].position += .1;
+                        rightShoulder.rotate(.01)
+                    }
+                } else {
+                    basketball.position = rightSideDribble
+                    for(var i = 0; i < rightUpperSide.length; i++){
+                        rightUpperSide[i].position -= .1;
+                        rightShoulder.rotate(-.01);
+                    }
+                }
+            }
+            if(Key.isDown('left')){
+                if(event.time.toFixed(0) % 2 === 1) {
+                    basketball.position = leftPinky.position;
+                    for(var i = 0; i < leftUpperSide.length; i++){
+                        leftUpperSide[i].position += .09;
+                      //  leftUpperSide[i].rotate(.5);
+                        leftShoulder.rotate(.001);
+                    }
+                } else {
+                    basketball.position = leftSideDribble;
+                    for(var i = 0; i < leftUpperSide.length; i++){
+                        leftUpperSide[i].position -= .09;
+                       // leftUpperSide[i].rotate(-.5);
+                        leftShoulder.rotate(-.001);
+                    }
+                }
+            }
+
+            if(Key.isDown('left') && Key.isDown('right')){
+                if(event.time.toFixed(0) % 3 === 0) {
+                    basketball.position = leftPinky.position
+                }
+                else if(event.time.toFixed(0) % 2 === 0) {
+                    basketball.position = middleDribble
+                } else {
+                    basketball.position = rightPinky.position
+                }
+            }
+
+            basketball.fillColor.hue += 1;
+        }
+
+        var basketball = new Path.Circle(new Point(450, 440), 35);
+        basketball.fillColor = "orange";
+        basketball.shadowColor = new Color(0, 0, 0);
+        basketball.shadowBlur = 150;
+        basketball.shadowOffset = new Point(0, 130)
+
+        var head = new Path.Rectangle({
+            point: [500, 75],
+            size: [100, 100],
+            strokeColor: '#683200',
+            fillColor: '#683200'
+        })
+
+        var headBand = new Path.Rectangle({
+            point: [500, 82],
+            size: [100, 20],
+            strokeColor: '#722F37',
+            fillColor: '#722F37'
+        })
+
+        var neck = new Path.Rectangle({
+            point: [540, 175],
+            size: [20, 50],
+            strokeColor: '#683200',
+            fillColor: "#683200"
+        })
+
+        var leftShoulder = new Path.RegularPolygon(new Point(453.4, 243), 5, 30);
+        leftShoulder.fillColor = '#683200';
+        leftShoulder.rotate(-15);
+
+        var rightShoulder = new Path.RegularPolygon(new Point(653, 243), 5, 30);
+        rightShoulder.fillColor = '#683200';
+        rightShoulder.rotate(15);
+
+        var leftArmUpper = new Path.Rectangle({
+            point: [440, 250],
+            size: [30, 70],
+            strokeColor: '#683200',
+            fillColor: "#683200"
+        })
+
+        var leftElbow = new Path.Circle(new Point(455, 328), 13);
+        leftElbow.fillColor = "#683200";
+
+        var leftForearm = new Path.Rectangle({
+            point: [445, 338],
+            size: [20, 42],
+            strokeColor: '#683200',
+            fillColor: "#683200"
+        })
+
+        var leftWrist = new Path.Circle(new Point(455, 385), 10.3);
+        leftWrist.fillColor = "#683200";
+
+        
+        var leftPalm = new Path.Rectangle({
+                point: [445, 385],
+                size: [20, 22],
+                strokeColor: '#683200',
+                fillColor: "#683200"
+        })
+
+        var leftPinky = new Path.Rectangle({
+            point: [445, 408],
+            size: [2, 10],
+            strokeColor: '#683200',
+            fillColor: "#683200"
+        })
+
+        var leftRing = new Path.Rectangle({
+            point: [450, 408],
+            size: [2, 10],
+            strokeColor: '#683200',
+            fillColor: "#683200"
+        })
+
+        var leftMiddle = new Path.Rectangle({
+            point: [455, 408],
+            size: [2, 10],
+            strokeColor: '#683200',
+            fillColor: "#683200"
+        })
+        var leftPointer = new Path.Rectangle({
+            point: [460, 408],
+            size: [2, 10],
+            strokeColor: '#683200',
+            fillColor: "#683200"
+        })
+
+        var leftThumb = new Path.Rectangle({
+            point: [465, 406],
+            size: [2, 8],
+            strokeColor: '#683200',
+            fillColor: "#683200"
+        })
+
+        var leftWristBand = new Path.Rectangle({
+            point: [452.5, 373],
+            size: [5, 20],
+            strokeColor: 'grey',
+            fillColor: '#f0ead6'
+        })
+        
+        leftWristBand.rotate(90);
+
+
+        var rightArmUpper = new Path.Rectangle({
+            point: [636.5, 250],
+            size: [30, 70],
+            strokeColor: '#683200',
+            fillColor: "#683200"
+        })
+
+        var rightElbow = new Path.Circle(new Point(652, 328), 13);
+        rightElbow.fillColor = "#683200";
+
+        var rightForearm = new Path.Rectangle({
+            point: [643, 338],
+            size: [20, 42],
+            strokeColor: '#683200',
+            fillColor: "#683200"
+        })
+
+        var rightWrist = new Path.Circle(new Point(653, 385), 10.3);
+        rightWrist.fillColor = "#683200";
+
+        var chest = new Path.Rectangle({
+            point: [478, 225],
+            size: [150, 100],
+            strokeColor: '#D4AF37',
+            fillColor: '#722F37'
+        })
+
+
+        var rightPalm = new Path.Rectangle({
+            point: [643, 385],
+            size: [20, 22],
+            strokeColor: '#683200',
+            fillColor: "#683200"
+    })
+
+    var rightPinky = new Path.Rectangle({
+        point: [645, 408],
+        size: [2, 10],
+        strokeColor: '#683200',
+        fillColor: "#683200"
+    })
+
+    var rightRing = new Path.Rectangle({
+        point: [650, 408],
+        size: [2, 10],
+        strokeColor: '#683200',
+        fillColor: "#683200"
+    })
+
+    var rightMiddle = new Path.Rectangle({
+        point: [655, 408],
+        size: [2, 10],
+        strokeColor: '#683200',
+        fillColor: "#683200"
+    })
+    var rightPointer = new Path.Rectangle({
+        point: [660, 408],
+        size: [2, 10],
+        strokeColor: '#683200',
+        fillColor: "#683200"
+    })
+
+    var rightThumb = new Path.Rectangle({
+        point: [640, 406],
+        size: [2, 8],
+        strokeColor: '#683200',
+        fillColor: "#683200"
+    })
+
+
+        var abs = new Path.Rectangle({
+            point: [526.5 , 325],
+            size: [50, 60],
+            strokeColor: '#722F37',
+            fillColor: '#722F37'
+        })
+
+        var newAbs = new Path.RegularPolygon(new Point(568, 355), 3, 75);
+        newAbs.fillColor = '#722F37';
+        newAbs.rotate(60);
+    
+        
+
+        var groin = new Path.Rectangle({
+            point: [500, 385],
+            size: [100, 40],
+            fillColor: "#722F37",
+            strokeColor: "#722F37"
+        })
+
+        var leftThigh = new Path.Rectangle({
+            point: [500, 425.5],
+            size: [40, 40],
+            strokeColor: "#722F37",
+            fillColor: "#722F37"
+        })
+
+        var rightThigh = new Path.Rectangle({
+            point: [560, 425.5],
+            size: [40, 40],
+            strokeColor: "#722F37",
+            fillColor: "#722F37"
+        })
+
+        var leftKnee = new Path.Circle(new Point(520, 477), 12);
+        leftKnee.fillColor = "#683200";
+
+        var rightKnee = new Path.Circle(new Point(580, 477), 12);
+        rightKnee.fillColor = "#683200";
+
+        var rightCalf = new Path.Rectangle({
+            point: [571, 482],
+            size: [18, 30],
+            strokeColor: '#683200',
+            fillColor: "#683200"
+        })
+
+        var rightUpperShoe = new Path.RegularPolygon(new Point(520, 540), 3, 25);
+        rightUpperShoe.fillColor = '#f0ead6';
+        rightUpperShoe.strokeColor = "grey";
+        rightUpperShoe.rotate(1);
+
+        var leftUpperShoe = new Path.RegularPolygon(new Point(580, 540), 3, 25);
+        leftUpperShoe.fillColor = '#f0ead6';
+        leftUpperShoe.strokeColor = "grey"
+        leftUpperShoe.rotate(1);
+
+        var leftCalf = new Path.Rectangle({
+            point: [511, 482],
+            size: [18, 30],
+            strokeColor: '#683200',
+            fillColor: "#683200"
+        })
+
+        var rightSock = new Path.Rectangle({
+            point: [570, 513],
+            size: [20, 22],
+            strokeColor: 'black',
+            fillColor: "#f0ead6"
+        })
+
+        var leftSock = new Path.Rectangle({
+            point: [510, 513],
+            size: [20, 22],
+            strokeColor: 'black',
+            fillColor: "#f0ead6"
+        })
+
+        var leftSole = new Path.Rectangle({
+            point: [512, 537.8],
+            size: [15, 45],
+            strokeColor: 'grey',
+            fillColor: '#f0ead6'
+        })
+        
+        leftSole.rotate(90);
+
+        var rightSole = new Path.Rectangle({
+            point: [572.5, 537.8],
+            size: [15, 45],
+            strokeColor: 'grey',
+            fillColor: '#f0ead6'
+        })
+        
+        rightSole.rotate(90);
+       
+        var rightUpperSide = [rightArmUpper, rightElbow, rightForearm, rightMiddle, rightPalm, rightPinky, rightPointer, rightRing, rightWrist, rightThumb];
+        var leftUpperSide = [leftArmUpper, leftElbow, leftForearm, leftMiddle, leftPalm, leftPinky, leftPointer, leftRing, leftWrist, leftThumb, leftWristBand];
+    </script>
+    
+</head>
+<body>
+   <canvas id="myCanvas" width="1000px" height="600px"></canvas> 
+</body>
+    <!-- <script src="lebron.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/paper.js/0.11.8/paper-core.js"></script> -->
+</html>
