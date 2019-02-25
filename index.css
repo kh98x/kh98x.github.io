@@ -1,0 +1,128 @@
+body {
+  text-shadow: 0px 4px 3px rgba(0, 0, 0, 0.4), 0px 8px 13px rgba(0, 0, 0, 0.1),
+    0px 18px 23px rgba(0, 0, 0, 0.1);
+  color: #f0ead6;
+}
+
+/* Removed text-shadow on drop-down menu */
+#noShadow {
+  text-shadow: 0px 0px 0px rgba(0, 0, 0, 0), 0px 0px 0px rgba(0, 0, 0, 0),
+    0px 0px 0px rgba(0, 0, 0, 0);
+}
+
+h1 {
+  font-size: 4em;
+}
+
+.mBottom {
+  margin-bottom: 2%;
+}
+
+hr {
+  border-top: 1px solid #f8f8f8;
+  border-bottom: 1px solid rgb(0, 0, 0, 0.2);
+  width: 380px;
+}
+
+.textMiddle {
+  text-align: center;
+}
+
+.padTop {
+  padding-top: 20%;
+}
+
+.bg-img {
+  height: 35em;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.bg-img:hover {
+  -webkit-box-shadow: 0px 6px 21px -2px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0px 6px 21px -2px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 6px 21px -2px rgba(0, 0, 0, 0.75);
+}
+
+#intro {
+  height: 50em;
+  background: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.7)),
+    url("https://images.unsplash.com/photo-1539278311020-fe8d86254350?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1349&q=80")
+      no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+/* Fix text shadow on projects dropdown menu
+ #noDec {
+      text-shadow: 0px;
+  } */
+
+.vRule {
+  border-left: 0.09em solid #f0ead6;
+}
+
+.pSixOp {
+  opacity: 0.6;
+}
+
+a:hover {
+  opacity: 1;
+  color: #6567c6;
+}
+
+.bg-purple {
+  background: #6567c6;
+}
+
+a {
+  color: #f0ead6;
+}
+
+/* Tic Tac Toe styling */
+#ttt {
+  font-family: "Shadows Into Light", cursive;
+}
+
+#message {
+  font-size: 1.5em;
+}
+
+.tic {
+  width: 5em;
+  height: 5em;
+}
+
+table {
+  border-radius: 5px;
+  margin: 0px auto;
+  padding: 2em;
+}
+
+td {
+  background: #9370db;
+  padding: 30px;
+}
+
+.score {
+  display: flex;
+  justify-content: space-between;
+  margin: 1em 10em;
+  font-size: 2em;
+}
+
+.tButton {
+  border-radius: 1.5em;
+  font-family: "Shadows Into Light", cursive;
+  font-size: 1.3em;
+  padding: 1.5em;
+  margin: 0.5em 5em;
+  text-decoration: none;
+}
+
+.tButton:hover {
+}
