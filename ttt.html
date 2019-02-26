@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Tic Tac Toe</title>
+    <link rel="stylesheet" type="text/css" href="index.css" media="screen" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Shadows+Into+Light"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.4.1/css/all.css"
+      integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz"
+      crossorigin="anonymous"
+    />
+  </head>
+
+  <body id="ttt" onload="startGame()">
+    <div class="bg-purple textMiddle">
+      <div>
+        <button class="home">
+          <a href="index.html"><i class="fas fa-home"></i></a>
+        </button>
+        <h1 class="">Tic Tac Toe</h1>
+        <h2>
+          <label for="winTotal">First to:</label>
+          <input
+            type="number"
+            id="winTotal"
+            name="winTotal"
+            placeholder="3"
+            min="1"
+            max="21"
+            value="3"
+          />
+        </h2>
+
+        <p class="score">
+          <span class="x">X:<span id="xScore"> 0</span></span>
+          <span class="o">O:<span id="oScore"> 0</span></span>
+        </p>
+
+        <p id="message"></p>
+        <div>
+          <table>
+            <tr>
+              <td class="tic" id="s1" onClick="nextMove(this)"></td>
+              <td class="tic" id="s2" onClick="nextMove(this)"></td>
+              <td class="tic" id="s3" onClick="nextMove(this)"></td>
+            </tr>
+            <tr>
+              <td class="tic" id="s4" onClick="nextMove(this)"></td>
+              <td class="tic" id="s5" onClick="nextMove(this)"></td>
+              <td class="tic" id="s6" onClick="nextMove(this)"></td>
+            </tr>
+            <tr>
+              <td class="tic" id="s7" onClick="nextMove(this)"></td>
+              <td class="tic" id="s8" onClick="nextMove(this)"></td>
+              <td class="tic" id="s9" onClick="nextMove(this)"></td>
+            </tr>
+          </table>
+
+          <!-- Create Reset button when game is over -->
+          <button id="gameButton" class="tButton" onClick="startGame()">
+            Restart
+          </button>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script src="ttt.js"></script>
+</html>
