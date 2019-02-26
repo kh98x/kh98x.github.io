@@ -84,6 +84,23 @@ a {
 }
 
 /* Tic Tac Toe styling */
+.home {
+  float: left;
+  font-size: 2em;
+  padding: 0.5em;
+  background-color: #6567c6;
+  margin: 0.2em;
+  border: none;
+  opacity: 0.9;
+}
+
+.home:hover {
+  transition: opacity 0.3s, background-color 0.3s, border-radius 0.3s;
+  opacity: 0.5;
+  background-color: white;
+  border-radius: 1.5em;
+}
+
 #ttt {
   font-family: "Shadows Into Light", cursive;
 }
@@ -108,6 +125,10 @@ td {
   padding: 30px;
 }
 
+td:hover {
+  cursor: pointer;
+}
+
 .score {
   display: flex;
   justify-content: space-between;
@@ -125,4 +146,7 @@ td {
 }
 
 .tButton:hover {
+  transition: background-color 0.5s ease-in;
+  background-color: #f0ead6;
+  cursor: pointer;
 }
