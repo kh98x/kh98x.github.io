@@ -103,7 +103,7 @@ a {
 
 #ttt {
   font-family: "Shadows Into Light", cursive;
-  background: no-repeat;
+  margin: 0;
 }
 
 #message {
@@ -123,12 +123,20 @@ table {
 
 td {
   background: #9370db;
-  padding: 30px;
+  padding: 1em;
   font-size: 1.15em;
 }
 
 td:hover {
   cursor: pointer;
+}
+
+/* Increase input visibility */
+
+h2 input {
+  height: 3vh;
+  width: 5vh;
+  font-size: 20px;
 }
 
 .score {
@@ -173,5 +181,15 @@ td:hover {
   .title {
     font-size: 2em;
     text-align: center;
+    margin-left: 1.55em;
+  }
+  .home:hover {
+    transition: opacity 0.8s, background-color 0.8s, border-radius 0.8s;
+  }
+}
+
+@media (max-width: 1500px) {
+  .title {
+    margin-right: 1.55em;
   }
 }

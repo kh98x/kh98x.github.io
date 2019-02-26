@@ -11,6 +11,7 @@ total.addEventListener("change", function() {
   document.getElementById("xScore").innerText = xTeam;
   document.getElementById("oScore").innerText = oTeam;
   gameOver = false;
+  lastWinner = "X";
   startGame();
   gameButton.nextSibling.remove();
 });
