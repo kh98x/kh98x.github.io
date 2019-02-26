@@ -1,8 +1,9 @@
-var xTeam = 0;
-var oTeam = 0;
-var gameButton = document.querySelector("#gameButton");
-var gameOver = false;
-var total = document.querySelector("input[type='number']");
+let xTeam = 0;
+let oTeam = 0;
+let gameButton = document.querySelector("#gameButton");
+let gameOver = false;
+let total = document.querySelector("input[type='number']");
+let lastWinner = "";
 
 total.addEventListener("change", function() {
   oTeam = 0;
@@ -18,10 +19,10 @@ function startGame() {
   for (var i = 1; i <= 9; i++) {
     clearBox(i);
   }
-  document.turn = "X";
+  document.turn = lastWinner || "X";
   document.winner = null;
   gameButton.style.display = "inline";
-  setMessage(document.turn + " goes next.");
+  setMessage(document.turn + " goes first.");
   gameButton.textContent = "Restart";
 }
 
@@ -45,14 +46,15 @@ function switchTurn() {
     setMessage("Congratulations " + document.turn + ", you won!");
     document.winner = document.turn;
     gameButton.textContent = "Play Again?";
-    if (document.winner == "X") {
+    lastWinner = document.winner;
+    if (document.winner === "X") {
       ++xTeam;
       document.getElementById("xScore").innerText = xTeam;
-      endGame();
+      if (xTeam === Number(total.value)) endGame();
     } else {
       ++oTeam;
       document.getElementById("oScore").innerText = oTeam;
-      endGame();
+      if (oTeam === Number(total.value)) endGame();
     }
   } else {
     if (document.turn === "X") {
@@ -99,16 +101,14 @@ function clearBox(number) {
 }
 
 function endGame() {
-  if ((oTeam || xTeam) === Number(total.value)) {
-    gameOver = true;
-    resetGame();
-  }
+  gameOver = true;
+  resetGame();
 }
 
 function resetGame() {
   setMessage("WHOA " + document.turn + " YOU WON THE SERIES!");
   gameButton.style.display = "none";
-  var newButton = document.createElement("button");
+  let newButton = document.createElement("button");
   newButton.textContent = "Reset Game?";
   gameButton.parentNode.insertBefore(newButton, gameButton.nextSibling);
   newButton.setAttribute("class", "tButton");
@@ -122,14 +122,6 @@ function resetGame() {
     gameButton.style.display = "inline";
     newButton.parentNode.removeChild(newButton);
   });
-}
-// create fx to switch starting position
-function previousWinner() {
-  if (checkForWinner(document.turn) === "X") {
-    document.turn = "O";
-  } else {
-    document.turn = "X";
-  }
 }
 
 function checkForTie() {
