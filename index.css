@@ -103,6 +103,7 @@ a {
 
 #ttt {
   font-family: "Shadows Into Light", cursive;
+  background: no-repeat;
 }
 
 #message {
@@ -123,6 +124,7 @@ table {
 td {
   background: #9370db;
   padding: 30px;
+  font-size: 1.15em;
 }
 
 td:hover {
@@ -143,10 +145,33 @@ td:hover {
   padding: 1.5em;
   margin: 0.5em 5em;
   text-decoration: none;
+  opacity: 0.9;
+  background: white;
 }
 
 .tButton:hover {
   transition: background-color 0.5s ease-in;
   background-color: #f0ead6;
   cursor: pointer;
+}
+
+@media (max-width: 740px) {
+  .score {
+    justify-content: space-evenly;
+    margin: 0;
+  }
+  .home {
+    margin-top: 0.2em;
+    width: 100%;
+    background: none;
+  }
+  .home:hover {
+    margin: 0;
+    border-radius: 1em;
+    background-color: black;
+  }
+  .title {
+    font-size: 2em;
+    text-align: center;
+  }
 }
