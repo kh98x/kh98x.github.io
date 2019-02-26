@@ -3,6 +3,7 @@ let oTeam = 0;
 let gameButton = document.querySelector("#gameButton");
 let gameOver = false;
 let total = document.querySelector("input[type='number']");
+let winnerClass = document.getElementById("message");
 let lastWinner = "";
 
 total.addEventListener("change", function() {
@@ -20,6 +21,7 @@ function startGame() {
   for (var i = 1; i <= 9; i++) {
     clearBox(i);
   }
+  winnerClass.classList.remove("winner");
   document.turn = lastWinner || "X";
   document.winner = null;
   gameButton.style.display = "inline";
@@ -107,6 +109,7 @@ function endGame() {
 }
 
 function resetGame() {
+  winnerClass.classList.add("winner");
   setMessage("WHOA " + document.turn + " YOU WON THE SERIES!");
   gameButton.style.display = "none";
   let newButton = document.createElement("button");

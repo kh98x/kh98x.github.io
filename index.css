@@ -193,3 +193,40 @@ h2 input {
     margin-right: 1.55em;
   }
 }
+
+/* Winner Animation */
+
+@keyframes won {
+  0% {
+    color: white;
+  }
+  15% {
+    color: #e6e6fa;
+  }
+  30% {
+    color: #d8bfd8;
+  }
+  45% {
+    color: #dda0dd;
+  }
+  60% {
+    color: #da70d6;
+  }
+  75% {
+    color: #8a2be2;
+  }
+  90% {
+    color: #8b008b;
+  }
+  100% {
+    color: white;
+  }
+}
+
+.winner {
+  animation-name: won;
+  animation-duration: 1s;
+  animation-timing-function: linear;
+  animation-delay: 0s;
+  animation-iteration-count: infinite;
+}
