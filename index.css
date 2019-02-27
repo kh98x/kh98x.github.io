@@ -225,6 +225,9 @@ h2 input {
   article div ul {
     padding: 0em 3.6em;
   }
+  hr {
+    width: 100vh;
+  }
 }
 
 @media (max-width: 536px) {
@@ -283,7 +286,7 @@ h2 input {
 
 @media (max-width: 464px) {
   article div ul {
-    padding: 0em 0.9em;
+    padding: 0em 0.3em;
   }
 }
 /* Winner Animation */
