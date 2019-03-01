@@ -1,3 +1,6 @@
+html {
+  scroll-behavior: smooth;
+}
 body {
   text-shadow: 0px 2px 3px rgba(0, 0, 0, 0.4), 0px 8px 13px rgba(0, 0, 0, 0.1),
     0px 18px 20px rgba(0, 0, 0, 0.1);
@@ -16,6 +19,13 @@ body {
 
 ul li {
   list-style-type: none;
+}
+
+p {
+  font-size: 16px;
+  padding: 0.5em;
+  margin: 0.7em;
+  letter-spacing: 0.2rem;
 }
 
 h1 {
@@ -182,20 +192,13 @@ h2 input {
     border-radius: 1em;
     background-color: black;
   }
-  .title {
-    font-size: 2em;
-    text-align: center;
-    margin-left: 1.55em;
-  }
+
   .home:hover {
     transition: opacity 0.8s, background-color 0.8s, border-radius 0.8s;
   }
 }
 
 @media (max-width: 1500px) {
-  .title {
-    margin-right: 1.55em;
-  }
   article div ul li {
     margin: 26px;
   }
@@ -218,6 +221,9 @@ h2 input {
   }
   article img {
     margin: 1em 0em;
+  }
+  span img {
+    padding-top: 12px;
   }
 }
 
@@ -289,6 +295,33 @@ h2 input {
     padding: 0em 0.3em;
   }
 }
+
+@media (max-width: 414px) {
+  article div ul a {
+    width: 14em;
+  }
+  hr {
+    width: 16em;
+  }
+}
+
+@media (max-width: 375px) {
+  article div ul a {
+    width: 11.5em;
+  }
+}
+
+@media (max-width: 360px) {
+  article div ul a {
+    width: 10em;
+  }
+}
+
+@media (max-width: 320px) {
+  article div ul a {
+    width: 8em;
+  }
+}
 /* Winner Animation */
 
 @keyframes won {
@@ -329,4 +362,29 @@ h2 input {
 /* Projects section */
 bg-white {
   background-color: #eee;
+}
+
+.card-container {
+  padding: 3.5em 0em;
+}
+
+.title {
+  color: black;
+  -webkit-text-fill-color: white;
+  -webkit-text-stroke-width: 0.8px;
+  -webkit-text-stroke-color: black;
+}
+
+.ttt-title {
+  color: black;
+  -webkit-text-fill-color: white;
+  -webkit-text-stroke-width: 0px;
+  -webkit-text-stroke-color: black;
+}
+
+/* Footer */
+#footer {
+  background-color: black;
+  height: 30em;
+  margin-top: 10em;
 }
