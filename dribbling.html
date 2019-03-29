@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Lebron</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css"
+    />
+    <script type="text/javascript" src="paper.js"></script>
+    <script type="text/paperscript" canvas="myCanvas">
+
+        // Cavs Colorway
+        var mainColor = "#683200";
+        var jerseyColor = "#722F37";
+        var offsetColor = "#D4AF37";
+
+        function changeColor(jersey, offset) {
+          jerseyColor = jersey;
+          offsetColor = offset;
+        }
+
+        // Laker Colors
+        changeColor("#FFD700", "#9932CC")
+
+
+      // floor position
+      var leftSideDribble = new Point(450, 540);
+      var middleDribble = new Point(550, 540);
+      var rightSideDribble = new Point(650, 540);
+
+      function speedAndPosition() {
+
+      }
+
+
+      function onFrame(event) {
+
+        // DRIBBLE TO THE LEFT ONLOAD, regular speed
+        if (event.time.toFixed(0) % 2 === 1) {
+          basketball.position = leftPinky.position;
+        } else {
+          basketball.position = leftSideDribble;
+        }
+
+        // SPEED UP DRIBBLE for left side
+        if (Key.isDown("down")) {
+            if(event.count % 2 === 0){
+              basketball.position = leftPinky.position;
+            } else {
+               basketball.position = leftSideDribble;
+            }
+        }
+
+        // Left arm movement, arm not staying in place
+        if (Key.isDown("left")) {
+          if (event.time.toFixed(0) % 2 === 0) {
+            basketball.position = leftPinky.position;
+            for (var i = 0; i < leftUpperSide.length; i++) {
+              leftUpperSide[i].position += 0.04;
+              leftUpperSide[i].rotate(.05);
+              leftShoulder.rotate(0.015);
+            }
+          } else {
+            basketball.position = leftSideDribble;
+            for (var i = 0; i < leftUpperSide.length; i++) {
+              leftUpperSide[i].position -= 0.04;
+              leftUpperSide[i].rotate(-.05);
+              leftShoulder.rotate(-0.015);
+            }
+          }
+        }
+
+        if (Key.isDown("right")) {
+            if (event.time.toFixed(0) % 2 === 1) {
+              basketball.position = rightPinky.position;
+              for (var i = 0; i < rightUpperSide.length; i++) {
+                rightUpperSide[i].position += 0.04;
+                rightUpperSide[i].rotate(.05);
+                rightShoulder.rotate(0.015);
+              }
+            } else {
+              basketball.position = rightSideDribble;
+              for (var i = 0; i < rightUpperSide.length; i++) {
+                rightUpperSide[i].position -= 0.04;
+                rightUpperSide[i].rotate(-0.05);
+                rightShoulder.rotate(-0.015);
+              }
+            }
+          }
+
+          if (Key.isDown("up")) {
+            if(event.count % 2 === 0){
+                basketball.position = rightPinky.position;
+
+              } else {
+                basketball.position = rightSideDribble;
+              }
+            }
+
+        if (Key.isDown("left") && Key.isDown("right")) {
+          if (event.count % 5 === 0) {
+            basketball.position = leftPinky.position;
+          } else if (event.count % 3 === 0) {
+            basketball.position = middleDribble;
+          } else {
+            basketball.position = rightPinky.position;
+          }
+        }
+
+        <!-- Rainbow ball disabled -->
+        <!-- basketball.fillColor.hue += 1; -->
+      }
+
+      // Basketball creation
+
+      var basketball = new Path.Circle(new Point(450, 440), 35);
+      basketball.fillColor = "orange";
+      basketball.shadowColor = new Color(0, 0, 0);
+      basketball.shadowBlur = 150;
+      basketball.shadowOffset = new Point(0, 130);
+
+      // Body creation
+
+      var head = new Path.Rectangle({
+        point: [500, 75],
+        size: [100, 100],
+        strokeColor: mainColor,
+        fillColor: mainColor
+      });
+
+      var headBand = new Path.Rectangle({
+        point: [500, 82],
+        size: [100, 20],
+        strokeColor: jerseyColor,
+        fillColor: jerseyColor
+      });
+
+      var neck = new Path.Rectangle({
+        point: [540, 175],
+        size: [20, 50],
+        strokeColor: mainColor,
+        fillColor: mainColor
+      });
+
+      var leftShoulder = new Path.RegularPolygon(new Point(453.4, 243), 5, 30);
+      leftShoulder.fillColor = mainColor;
+      leftShoulder.rotate(-15);
+
+      var rightShoulder = new Path.RegularPolygon(new Point(653, 243), 5, 30);
+      rightShoulder.fillColor = mainColor;
+      rightShoulder.rotate(15);
+
+      var leftArmUpper = new Path.Rectangle({
+        point: [440, 250],
+        size: [30, 70],
+        strokeColor: mainColor,
+        fillColor: mainColor
+      });
+
+      var leftElbow = new Path.Circle(new Point(455, 328), 13);
+      leftElbow.fillColor = mainColor;
+
+      var leftForearm = new Path.Rectangle({
+        point: [445, 338],
+        size: [20, 42],
+        strokeColor: mainColor,
+        fillColor: mainColor
+      });
+
+      var leftWrist = new Path.Circle(new Point(455, 385), 10.3);
+      leftWrist.fillColor = mainColor;
+
+      var leftPalm = new Path.Rectangle({
+        point: [445, 385],
+        size: [20, 22],
+        strokeColor: mainColor,
+        fillColor: mainColor
+      });
+
+      var leftPinky = new Path.Rectangle({
+        point: [445, 408],
+        size: [2, 10],
+        strokeColor: mainColor,
+        fillColor: mainColor
+      });
+
+      var leftRing = new Path.Rectangle({
+        point: [450, 408],
+        size: [2, 10],
+        strokeColor: mainColor,
+        fillColor: mainColor
+      });
+
+      var leftMiddle = new Path.Rectangle({
+        point: [455, 408],
+        size: [2, 10],
+        strokeColor: mainColor,
+        fillColor: mainColor
+      });
+      var leftPointer = new Path.Rectangle({
+        point: [460, 408],
+        size: [2, 10],
+        strokeColor: mainColor,
+        fillColor: mainColor
+      });
+
+      var leftThumb = new Path.Rectangle({
+        point: [465, 406],
+        size: [2, 8],
+        strokeColor: mainColor,
+        fillColor: mainColor
+      });
+
+      var leftWristBand = new Path.Rectangle({
+        point: [452.5, 373],
+        size: [5, 20],
+        strokeColor: "grey",
+        fillColor: "#f0ead6"
+      });
+
+      leftWristBand.rotate(90);
+
+      var rightArmUpper = new Path.Rectangle({
+        point: [636.5, 250],
+        size: [30, 70],
+        strokeColor: mainColor,
+        fillColor: mainColor
+      });
+
+      var rightElbow = new Path.Circle(new Point(652, 328), 13);
+      rightElbow.fillColor = mainColor;
+
+      var rightForearm = new Path.Rectangle({
+        point: [643, 338],
+        size: [20, 42],
+        strokeColor: mainColor,
+        fillColor: mainColor
+      });
+
+      var rightWrist = new Path.Circle(new Point(653, 385), 10.3);
+      rightWrist.fillColor = mainColor;
+
+      var chest = new Path.Rectangle({
+        point: [478, 225],
+        size: [150, 100],
+        strokeColor: offsetColor,
+        fillColor: jerseyColor
+      });
+
+      var rightPalm = new Path.Rectangle({
+        point: [643, 385],
+        size: [20, 22],
+        strokeColor: mainColor,
+        fillColor: mainColor
+      });
+
+      var rightPinky = new Path.Rectangle({
+        point: [645, 408],
+        size: [2, 10],
+        strokeColor: mainColor,
+        fillColor: mainColor
+      });
+
+      var rightRing = new Path.Rectangle({
+        point: [650, 408],
+        size: [2, 10],
+        strokeColor: mainColor,
+        fillColor: mainColor
+      });
+
+      var rightMiddle = new Path.Rectangle({
+        point: [655, 408],
+        size: [2, 10],
+        strokeColor: mainColor,
+        fillColor: mainColor
+      });
+      var rightPointer = new Path.Rectangle({
+        point: [660, 408],
+        size: [2, 10],
+        strokeColor: mainColor,
+        fillColor: mainColor
+      });
+
+      var rightThumb = new Path.Rectangle({
+        point: [640, 406],
+        size: [2, 8],
+        strokeColor: mainColor,
+        fillColor: mainColor
+      });
+
+      var abs = new Path.Rectangle({
+        point: [526.5, 325],
+        size: [50, 60],
+        strokeColor: jerseyColor,
+        fillColor: jerseyColor
+      });
+
+      var newAbs = new Path.RegularPolygon(new Point(568, 355), 3, 75);
+      newAbs.fillColor = jerseyColor;
+      newAbs.rotate(60);
+
+      var groin = new Path.Rectangle({
+        point: [500, 385],
+        size: [100, 40],
+        fillColor: jerseyColor,
+        strokeColor: jerseyColor
+      });
+
+      var leftThigh = new Path.Rectangle({
+        point: [500, 425.5],
+        size: [40, 40],
+        strokeColor: jerseyColor,
+        fillColor: jerseyColor
+      });
+
+      var rightThigh = new Path.Rectangle({
+        point: [560, 425.5],
+        size: [40, 40],
+        strokeColor: jerseyColor,
+        fillColor: jerseyColor
+      });
+
+      var leftKnee = new Path.Circle(new Point(520, 477), 12);
+      leftKnee.fillColor = mainColor;
+
+      var rightKnee = new Path.Circle(new Point(580, 477), 12);
+      rightKnee.fillColor = mainColor;
+
+      var rightCalf = new Path.Rectangle({
+        point: [571, 482],
+        size: [18, 30],
+        strokeColor: mainColor,
+        fillColor: mainColor
+      });
+
+      var rightUpperShoe = new Path.RegularPolygon(new Point(520, 540), 3, 25);
+      rightUpperShoe.fillColor = "#f0ead6";
+      rightUpperShoe.strokeColor = "grey";
+      rightUpperShoe.rotate(1);
+
+      var leftUpperShoe = new Path.RegularPolygon(new Point(580, 540), 3, 25);
+      leftUpperShoe.fillColor = "#f0ead6";
+      leftUpperShoe.strokeColor = "grey";
+      leftUpperShoe.rotate(1);
+
+      var leftCalf = new Path.Rectangle({
+        point: [511, 482],
+        size: [18, 30],
+        strokeColor: mainColor,
+        fillColor: mainColor
+      });
+
+      var rightSock = new Path.Rectangle({
+        point: [570, 513],
+        size: [20, 22],
+        strokeColor: "black",
+        fillColor: "#f0ead6"
+      });
+
+      var leftSock = new Path.Rectangle({
+        point: [510, 513],
+        size: [20, 22],
+        strokeColor: "black",
+        fillColor: "#f0ead6"
+      });
+
+      var leftSole = new Path.Rectangle({
+        point: [512, 537.8],
+        size: [15, 45],
+        strokeColor: "grey",
+        fillColor: "#f0ead6"
+      });
+
+      leftSole.rotate(90);
+
+      var rightSole = new Path.Rectangle({
+        point: [572.5, 537.8],
+        size: [15, 45],
+        strokeColor: "grey",
+        fillColor: "#f0ead6"
+      });
+
+      rightSole.rotate(90);
+
+      // Access to sides of limbs
+
+      var rightUpperSide = [
+        rightArmUpper,
+        rightElbow,
+        rightForearm,
+        rightMiddle,
+        rightPalm,
+        rightPinky,
+        rightPointer,
+        rightRing,
+        rightWrist,
+        rightThumb
+      ];
+
+      var leftUpperSide = [
+        leftArmUpper,
+        leftElbow,
+        leftForearm,
+        leftMiddle,
+        leftPalm,
+        leftPinky,
+        leftPointer,
+        leftRing,
+        leftWrist,
+        leftThumb,
+        leftWristBand
+      ];
+
+      var rightLowerSide = [
+        rightThigh, rightKnee, rightCalf, rightSock, rightSole, rightUpperShoe
+      ]
+
+      var leftLowerSide = [
+        leftThigh, leftKnee, leftCalf, leftSock, leftSole, leftUpperShoe
+      ]
+    </script>
+  </head>
+  <body>
+    <!-- header -->
+    <div class="ui header fourteen wide center aligned">
+      <div class="ui segment">
+        <div
+          class="ui button ui violet"
+          data-inverted=""
+          data-tooltip="For best dribbling experience, please view on desktop."
+          data-position="bottom center"
+        >
+          <h1>
+            Display your dribble moves!
+          </h1>
+        </div>
+      </div>
+    </div>
+    <!-- canvas -->
+    <div class="ui container centered aligned">
+      <div class="ui piled segment">
+        <canvas height="160em" id="myCanvas" class="ui fluid image"></canvas>
+      </div>
+    </div>
+    <!-- popup controls -->
+    <div class="ui column centered grid">
+      <div class="ui segment">
+        <div
+          class="ui button ui violet button"
+          data-tooltip="All arrow keys, press/hold for combinations"
+          data-position="top center"
+        >
+          Controls
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
