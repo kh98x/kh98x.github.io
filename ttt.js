@@ -5,10 +5,12 @@ let gameOver = false;
 let total = document.querySelector("input[type='number']");
 let winnerClass = document.getElementById("message");
 let lastWinner = "";
+let arr = [];
 
 total.addEventListener("change", function() {
   oTeam = 0;
   xTeam = 0;
+  arr = [];
   document.getElementById("xScore").innerText = xTeam;
   document.getElementById("oScore").innerText = oTeam;
   gameOver = false;
@@ -21,6 +23,7 @@ function startGame() {
   for (var i = 1; i <= 9; i++) {
     clearBox(i);
   }
+  arr = [];
   winnerClass.classList.remove("winner");
   document.turn = lastWinner || "X";
   document.winner = null;
@@ -129,15 +132,26 @@ function resetGame() {
 }
 
 function checkForTie() {
-  for (var i = 1; i < 9; i++) {
-    if (
-      document.getElementById("s" + i).innerText !== "" &&
-      checkForWinner("X") === false &&
-      checkForWinner("O") === false
-    ) {
-      setMessage("Sorry it's a tie... Restart the game");
-    } else {
-      setMessage("Pick another square.");
+  if (
+    9 === totalFilledSquares() &&
+    checkForWinner("X") === false &&
+    checkForWinner("O") === false
+  ) {
+    setMessage(`It's a tie, restart the game`);
+  } else {
+    setMessage("Pick another square");
+  }
+}
+
+// need to fix tie game validation
+
+function totalFilledSquares() {
+  for (var i = 1; i < 10; i++) {
+    if (document.getElementById("s" + i).innerText !== "") {
+      arr.push(document.getElementById("s" + i));
     }
   }
+  let newArr = [...new Set(arr)];
+
+  return newArr.length;
 }
