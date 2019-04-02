@@ -1,11 +1,18 @@
 let xTeam = 0;
 let oTeam = 0;
 let gameButton = document.querySelector("#gameButton");
+let tableData = document.querySelectorAll("td");
 let gameOver = false;
 let total = document.querySelector("input[type='number']");
 let winnerClass = document.getElementById("message");
 let lastWinner = "";
 let arr = [];
+
+for (let i = 0; i < tableData.length; i++) {
+  tableData[i].addEventListener("click", function(e) {
+    nextMove(e.target);
+  });
+}
 
 total.addEventListener("change", function() {
   oTeam = 0;
