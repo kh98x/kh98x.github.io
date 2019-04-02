@@ -7,8 +7,29 @@
       name="viewport"
       content="width=device-width, initial-scale=1, shrink-to-fit=no"
     />
-    <link rel="icon" type="image/png" href="favicon-32x32.png" sizes="32x32" />
-    <link rel="icon" type="image/png" href="favicon-16x16.png" sizes="16x16" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/favicon/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="/favicon/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="/favicon/favicon-16x16.png"
+    />
+    <link rel="manifest" href="/favicon/site.webmanifest" />
+
+    <link
+      href="https://fonts.googleapis.com/css?family=Ropa+Sans"
+      rel="stylesheet"
+    />
     <link
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
@@ -41,50 +62,31 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item">
-            <a class="nav-link" href="#projects">
+            <a class="nav-link ropa-font" href="#projects">
               Projects
             </a>
-            <!-- <div id="noShadow" aria-labelledby="navbarDropdown" class="dropdown-menu" > -->
-            <!-- <a class="dropdown-item" href="ttt.html">Tic Tac Toe</a>
-                  <a class="dropdown-item" href="#">Rolling Wok</a>
-                  <div class="dropdown-divider"></div>
-                  <a class="dropdown-item" href="#">DOM Post</a>
-                  <a class="dropdown-item" href="lebron.html"
-                    >LeBron via Paperscript</a
-                  > -->
-            <!-- </div> -->
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="https://github.com/kh98x">GitHub</a>
+            <a class="nav-link ropa-font" href="https://github.com/kh98x"
+              >GitHub</a
+            >
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Resume</a>
+            <a class="nav-link ropa-font" href="#">Resume</a>
           </li>
         </ul>
       </div>
     </nav>
 
-    <div id="intro" class="bg-img mBottom">
+    <div id="intro" class="bg-img">
       <div class="container padTop">
         <div class="row">
           <div class="col-lg-12">
-            <h1 class="textMiddle">Welcome to my portfolio</h1>
+            <h1 class="textMiddle">Welcome to My Portfolio</h1>
             <hr class="justify-content-md-center" />
             <div class="textMiddle row justify-content-md-center">
-              <a class="p-4 pSixOp col-sm" href="ttt.html"
-                ><i class="fas fa-gamepad fa-3x"></i
-              ></a>
-              <a
-                class="p-4 pSixOp vRule col-sm"
-                target="blank"
-                href="http://rollingwok.site"
-                ><i class="fas fa-utensils fa-3x"></i
-              ></a>
-              <a
-                class="p-4 pSixOp vRule col-sm"
-                href="https://medium.com/@keiththex/array-methods-converting-your-int-to-strings-dcb70fe52eca"
-                target="blank"
-                ><i class="fab fa-blogger-b fa-3x"></i
+              <a class="p-4 pSixOp col-sm" target="blank" href="#projects"
+                ><i class="fas fa-folder fa-3x"></i
               ></a>
               <a
                 class="p-4 pSixOp vRule col-sm"
@@ -92,128 +94,103 @@
                 href="https://github.com/kh98x"
                 ><i class="fab fa-github fa-3x"></i
               ></a>
+              <a
+                class="p-4 pSixOp vRule col-sm"
+                href="https://medium.com/@keiththex/array-methods-converting-your-int-to-strings-dcb70fe52eca"
+                target="blank"
+                ><i class="fab fa-medium fa-3x"></i
+              ></a>
             </div>
           </div>
         </div>
       </div>
     </div>
-
-    <h1 id="projects" class="text-center title m-5 p-5">All Projects</h1>
-
-    <!-- ANOTHER DISPLAY -->
-    <div class="container">
-      <div class="card-deck">
-        <!-- ROLLING WOK -->
-        <div class="card bg-purple">
-          <img
-            src="
+    <div class="card bg-purple">
+      <h1 id="projects" class="text-center title m-5 p-4">All Projects</h1>
+    </div>
+    <!-- Display -->
+    <div class="my-4 py-4">
+      <div class="pt-5 mt-5">
+        <div class="container">
+          <div class="card-deck">
+            <!-- ROLLING WOK -->
+            <div class="card bg-purple my-5">
+              <img
+                src="
           https://images.unsplash.com/photo-1491961865842-98f7befd1a60?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80          
           "
-            class="card-img-top"
-            alt="RW"
-          />
-          <div class="card-body">
-            <h5 class="card-title">Rolling Wok</h5>
-            <div class="card-text">
-              Chinese take-out with over 40 menu items and endless combinations.
-            </div>
-            <div class="card-text">
-              <div class="m-3">
-                <a
-                  class="btn btn-success btn-block"
-                  href="http://rollingwok.site"
-                  target="blank"
-                  >View <i class="fa fa-eye"></i
-                ></a>
-                <a
-                  class="btn btn-primary btn-block"
-                  href="https://github.com/kh98x/Rolling-Wok"
-                  target="blank"
-                  >GitHub <i class="fab fa-github fa-lg"></i
-                ></a>
-              </div>
-              <div class="text-center m-4">
-                Built with:
-                <i class="fab fa-react fa-2x mx-2"></i>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- BETTA LIFE -->
-        <div class="card bg-purple">
-          <img
-            src="https://images.unsplash.com/photo-1534575180408-b7d7c0136ee8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80"
-            class="card-img-top"
-            alt="BL"
-          />
-          <div class="card-body">
-            <h5 class="card-title">Betta Life</h5>
-            <div class="card-text">
-              Brighten up your life with a betta fish. Betta life, betta
-              choices. Get one today!
-            </div>
-            <div class="card-text">
-              <div class="m-4">
-                <a class="btn btn-success btn-block" href="#"
-                  >View <i class="fa fa-eye"></i
-                ></a>
-                <a class="btn btn-primary btn-block" href="#"
-                  >GitHub <i class="fab fa-github fa-lg"></i
-                ></a>
-              </div>
-              <div class="text-center m-4">
-                Built with:
-                <i class="fab fa-react fa-2x mx-2"></i>
-                <i class="fab fa-npm fa-2x mx-2"></i>
-                <i class="fab fa-node fa-2x mx-2"></i>
+                class="card-img-top"
+                alt="RW"
+              />
+              <div class="card-body">
+                <h5 class="card-title">Rolling Wok</h5>
+                <div class="card-text ropa-font">
+                  Chinese take-out with plenty of menu options and endless
+                  combinations.
+                </div>
+                <div class="card-text">
+                  <div class="m-3">
+                    <a
+                      class="btn btn-success btn-block"
+                      href="http://rollingwok.site"
+                      target="blank"
+                      >View <i class="fa fa-eye"></i
+                    ></a>
+                    <a
+                      class="btn btn-primary btn-block"
+                      href="https://github.com/kh98x/Rolling-Wok"
+                      target="blank"
+                      >GitHub <i class="fab fa-github fa-lg"></i
+                    ></a>
+                  </div>
+                  <div class="text-center m-4 ropa-font">
+                    Built with:
+                    <i class="fab fa-react fa-2x mx-2"></i>
+                  </div>
+                </div>
               </div>
             </div>
-          </div>
-        </div>
-        <!-- TIC TAC TOE -->
-        <div class="card bg-purple">
-          <img
-            src="https://images.unsplash.com/photo-1492044715545-15ddedd84e5e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80"
-            class="card-img-top"
-            alt="ttt"
-          />
-          <div class="card-body">
-            <h5 class="card-title">Tic Tac Toe</h5>
-            <div class="card-text">
-              Play a classic game with all the features included. Default game
-              is best of 5.
-            </div>
-            <div class="card-text">
-              <div class="m-3">
-                <a class="btn btn-success btn-block" href="ttt.html"
-                  >View <i class="fa fa-eye"></i
-                ></a>
-                <a
-                  class="btn btn-primary btn-block"
-                  href="https://github.com/kh98x/kh98x.github.io/blob/master/ttt.js"
-                  target="blank"
-                  >GitHub <i class="fab fa-github fa-lg"></i
-                ></a>
-              </div>
-              <div class="text-center m-4">
-                Built with: <i class="fab fa-js-square fa-2x mx-2"></i>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- second project container -->
-        <div class="container pt-5">
-          <div class="card-deck">
-            <!-- Bball dribbling -->
-            <div class="card bg-purple">
+            <!-- TIC TAC TOE -->
+            <div class="card bg-purple my-5">
               <img
-                src="https://images.unsplash.com/photo-1474224017046-182ece80b263?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80"
+                src="https://images.unsplash.com/photo-1492044715545-15ddedd84e5e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80"
                 class="card-img-top"
                 alt="ttt"
               />
               <div class="card-body">
-                <h5 class="card-title">Dribble a ball</h5>
+                <h5 class="card-title">Tic Tac Toe</h5>
+                <div class="card-text ropa-font">
+                  Play a classic game with all the features included. Default
+                  game is best of 5.
+                </div>
                 <div class="card-text">
+                  <div class="m-3">
+                    <a class="btn btn-success btn-block" href="ttt.html"
+                      >View <i class="fa fa-eye"></i
+                    ></a>
+                    <a
+                      class="btn btn-primary btn-block"
+                      href="https://github.com/kh98x/kh98x.github.io/blob/master/ttt.js"
+                      target="blank"
+                      >GitHub <i class="fab fa-github fa-lg"></i
+                    ></a>
+                  </div>
+                  <div class="text-center m-4 ropa-font">
+                    Built with: <i class="fab fa-js-square fa-2x mx-2"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- DRIBBLING -->
+            <div class="card bg-purple my-5">
+              <img
+                src="https://images.unsplash.com/photo-1474224017046-182ece80b263?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80"
+                class="card-img-top"
+                alt="dribble"
+              />
+              <div class="card-body">
+                <h5 class="card-title">Dribbles</h5>
+                <div class="card-text ropa-font">
                   Display your dribble moves with a basketball player created
                   with Paper.js
                 </div>
@@ -224,20 +201,57 @@
                     ></a>
                     <a
                       class="btn btn-primary btn-block"
-                      href="https://github.com/kh98x/kh98x.github.io/blob/master/ttt.js"
+                      href="https://github.com/kh98x/kh98x.github.io/blob/master/dribbling.html"
                       target="blank"
                       >GitHub <i class="fab fa-github fa-lg"></i
                     ></a>
                   </div>
-                  <div class="text-center m-4">
+                  <div class="text-center m-4 ropa-font">
                     Built with: <i class="fab fa-js-square fa-2x mx-2"></i>
                   </div>
                 </div>
               </div>
             </div>
-            <!-- end dribbling -->
-            <!-- start of __ project -->
-            <div class="card bg-purple">
+          </div>
+        </div>
+
+        <!-- second project container -->
+        <!-- <div class="container pt-5">
+          <div class="card-deck"> -->
+        <!-- Betta life in progress -->
+        <!-- <div class="card bg-purple">
+              <img
+                src="https://images.unsplash.com/photo-1534575180408-b7d7c0136ee8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80"
+                class="card-img-top"
+                alt="BL"
+              />
+              <div class="card-body">
+                <h5 class="card-title">Betta Life</h5>
+                <div class="card-text">
+                  Brighten up your life with a betta fish. Betta life, betta
+                  choices. Get one today!
+                </div>
+                <div class="card-text">
+                  <div class="m-4">
+                    <a class="btn btn-success btn-block" href="#"
+                      >View <i class="fa fa-eye"></i
+                    ></a>
+                    <a class="btn btn-primary btn-block" href="#"
+                      >GitHub <i class="fab fa-github fa-lg"></i
+                    ></a>
+                  </div>
+                  <div class="text-center m-4">
+                    Built with:
+                    <i class="fab fa-react fa-2x mx-2"></i>
+                    <i class="fab fa-npm fa-2x mx-2"></i>
+                    <i class="fab fa-node fa-2x mx-2"></i>
+                  </div>
+                </div>
+              </div>
+            </div> -->
+        <!-- end betta -->
+        <!-- start of __ project -->
+        <!-- <div class="card bg-purple">
               <img
                 src="https://images.unsplash.com/photo-1474224017046-182ece80b263?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80"
                 class="card-img-top"
@@ -265,19 +279,116 @@
                   </div>
                 </div>
               </div>
-            </div>
-            <!-- end of ___ project -->
-          </div>
-        </div>
+            </div> -->
+        <!-- end of ___ project -->
+        <!-- </div>
+        </div> -->
         <!-- end second container -->
       </div>
     </div>
-
-    <div id="footer" class="bottom text-center">
-      <p>
-        <i class="far fa-copyright text-center">Keith Ho 2019</i>
-      </p>
-      <span><i class="fas fa-envelope fa-2x mx-2"></i></span>
+    <!-- contact -->
+    <div class="pt-5 mt-5">
+      <div class="bg-purple text-center p-5">
+        <h2>Contact</h2>
+      </div>
+      <!-- bootstrap form -->
+      <div class="">
+        <div id="contact" class="p-5">
+          <div class="py-5 my-5">
+            <form
+              class="max-width-40 container bg-purple py-4 rounded"
+              action="https://formspree.io/keith.ck.ho88@gmail.com"
+              method="POST"
+            >
+              <div class="form group">
+                <label for="name" class="m-1 p-1">Name</label>
+                <input class="form-control" type="text" id="name" name="name" />
+              </div>
+              <div class="form-group">
+                <label for="mail" class="m-1 p-1">Email address</label>
+                <input
+                  type="email"
+                  class="form-control"
+                  id="mail"
+                  placeholder="name@example.com"
+                  name="user_email"
+                />
+              </div>
+              <div class="form group">
+                <label for="subject" class="m-1 p-1">Subject</label>
+                <input
+                  class="form-control"
+                  type="text"
+                  id="subject"
+                  name="subject"
+                />
+              </div>
+              <div class="form-group">
+                <label for="message" class="m-1 p-1">Message</label>
+                <textarea
+                  class="form-control"
+                  id="message"
+                  name="user_message"
+                  rows="8"
+                ></textarea>
+              </div>
+              <div class="d-flex justify-content-end">
+                <button class="btn btn-success">Send</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- end contact -->
+    <!-- about -->
+    <div class="bg-purple text-center p-5">
+      <h2>About</h2>
+    </div>
+    <div class="pad-top-6 bg-grey-gradient">
+      <!-- sticky test -->
+      <div class="d-flex pr-5">
+        <div class="sticky-container">
+          <div class="about-sticky d-flex flex-column bg-transparent my-5">
+            <a href="https://www.medium.com/@keiththex" target="blank"
+              ><i class="fab fa-medium"></i
+            ></a>
+            <a href="https://twitter.com/KeithHo19" target="blank"
+              ><i class="fab fa-twitter"></i
+            ></a>
+            <a
+              href="https://www.linkedin.com/in/keith-ho-76518147/"
+              target="blank"
+              ><i class="fab fa-linkedin"></i
+            ></a>
+          </div>
+        </div>
+        <!-- sticky test end -->
+        <div
+          class="jumbotron jumbotron-fluid rounded max-width-40 mx-auto bg-purple mt-5"
+        >
+          <div class="container mx-auto">
+            <p class="lead text-center ropa-font" style="font-size: 22px">
+              Hi, I'm Keith and I'm a front-end developer. I enjoy creating
+              projects that challenges and pushes me to grow. I spend my time
+              learning new things, improving on current skills and striving to
+              get better everyday.
+            </p>
+          </div>
+        </div>
+      </div>
+      <!-- end about -->
+      <div id="footer" class="text-center p-4 bg-purple">
+        <p>
+          <i class="far fa-copyright text-center"
+            ><strong><span class="ropa-font"> Keith Ho 2019</span></strong></i
+          >
+        </p>
+        <div class="d-flex justify-content-end ropa-font mt-5 pt-5 pSixOp">
+          <i class="fas fa-images px-1"></i> from
+          <a href="https://unsplash.com" class="px-1">unsplash</a>
+        </div>
+      </div>
     </div>
   </body>
   <script

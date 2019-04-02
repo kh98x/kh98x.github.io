@@ -143,8 +143,6 @@ function checkForTie() {
   }
 }
 
-// need to fix tie game validation
-
 function totalFilledSquares() {
   for (var i = 1; i < 10; i++) {
     if (document.getElementById("s" + i).innerText !== "") {

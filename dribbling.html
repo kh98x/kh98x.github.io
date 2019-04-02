@@ -1,11 +1,36 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Lebron</title>
+    <title>Dribbles</title>
+
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/favicon/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="/favicon/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="/favicon/favicon-16x16.png"
+    />
+    <link rel="manifest" href="/favicon/site.webmanifest" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css"
     />
+
     <script type="text/javascript" src="paper.js"></script>
     <script type="text/paperscript" canvas="myCanvas">
 
@@ -423,35 +448,47 @@
   <body>
     <!-- header -->
     <div class="ui header fourteen wide center aligned">
-      <div class="ui segment">
-        <div
-          class="ui button ui violet"
-          data-inverted=""
-          data-tooltip="For best dribbling experience, please view on desktop."
-          data-position="bottom center"
-        >
-          <h1>
-            Display your dribble moves!
-          </h1>
+      <div class="ui three column grid">
+        <!-- return buton -->
+        <div class="four wide column">
+          <a href="index.html" style="text-decoration: none; color: white">
+            <button class="ui animated button ui violet button">
+              <div class="visible content">Home</div>
+              <div class="hidden content">
+                <i class="home icon"></i>
+              </div>
+            </button>
+          </a>
+        </div>
+
+        <div class="eight wide column">
+          <div
+            class="ui button ui violet"
+            data-inverted=""
+            data-tooltip="For the best dribbling experience, please view full screen on desktop and refresh the page."
+            data-position="bottom center"
+          >
+            <h1 class="left floated">
+              Display your dribble moves!
+            </h1>
+          </div>
+        </div>
+        <!-- popup controls -->
+        <div class="four wide column">
+          <div
+            class="ui button ui violet button"
+            data-tooltip="All arrow keys, press/hold for combinations"
+            data-position="bottom right"
+          >
+            Controls
+          </div>
         </div>
       </div>
     </div>
     <!-- canvas -->
     <div class="ui container centered aligned">
       <div class="ui piled segment">
-        <canvas height="160em" id="myCanvas" class="ui fluid image"></canvas>
-      </div>
-    </div>
-    <!-- popup controls -->
-    <div class="ui column centered grid">
-      <div class="ui segment">
-        <div
-          class="ui button ui violet button"
-          data-tooltip="All arrow keys, press/hold for combinations"
-          data-position="top center"
-        >
-          Controls
-        </div>
+        <canvas height="156em" id="myCanvas" class="ui fluid image"></canvas>
       </div>
     </div>
   </body>
